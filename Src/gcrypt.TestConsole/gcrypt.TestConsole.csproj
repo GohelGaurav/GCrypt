@@ -49,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\gcrypt\gcrypt.csproj">
+    <ProjectReference Include="..\gcrypt\GCrypt.csproj">
       <Project>{1b5ebede-3fd3-4b2e-b304-a969673363a4}</Project>
-      <Name>gcrypt</Name>
+      <Name>GCrypt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

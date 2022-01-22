@@ -1,6 +1,6 @@
-﻿namespace gcrypt.Providers
+﻿namespace GCrypt.Providers
 {
-	public interface ICryptProvider
+	public interface IGCryptProvider
 	{
 		string Encrypt(string originalString);
 		string Decrypt(string encryptedString);

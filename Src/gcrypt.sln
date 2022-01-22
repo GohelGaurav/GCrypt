@@ -1,18 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gcrypt", "gcrypt\gcrypt.csproj", "{1B5EBEDE-3FD3-4B2E-B304-A969673363A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCrypt", "GCrypt\GCrypt.csproj", "{1B5EBEDE-3FD3-4B2E-B304-A969673363A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17FBE6A5-DD3F-4D21-9942-EA4D797C98AC}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
 		global.json = global.json
 		NuGet.Config = NuGet.Config
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gcrypt.TestConsole", "gcrypt.TestConsole\gcrypt.TestConsole.csproj", "{3665B1DE-5F40-4DCA-B0A7-DD78B1FA7A75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCrypt.TestConsole", "GCrypt.TestConsole\GCrypt.TestConsole.csproj", "{3665B1DE-5F40-4DCA-B0A7-DD78B1FA7A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
