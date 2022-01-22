@@ -59,8 +59,8 @@ namespace GCrypt
 
 		public bool BuildStatic()
 		{
-			GCrypt._cryptProviders = _cryptProviders.ToArray();
-			return GCrypt.TestProviders(GCrypt._cryptProviders);
+			GCrypter._cryptProviders = _cryptProviders.ToArray();
+			return GCrypter.TestProviders(GCrypter._cryptProviders);
 		}
 	}
 }

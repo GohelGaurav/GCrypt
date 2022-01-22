@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 
 namespace GCrypt
 {
-	public static class GCrypt
+	public static class GCrypter
 	{
 		internal static IGCryptProvider[] _cryptProviders { get; set; }
 
-		static GCrypt()
+		static GCrypter()
 		{
 			_cryptProviders = new IGCryptProvider[0];
 		}

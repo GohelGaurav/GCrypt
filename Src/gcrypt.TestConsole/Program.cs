@@ -1,6 +1,7 @@
 ﻿using System;
+using GCrypt;
 
-namespace GCrypt.TestConsole
+namespace GCrypt_Test
 {
 	class Program
 	{
@@ -23,10 +24,10 @@ namespace GCrypt.TestConsole
 				var originalString = Guid.NewGuid().ToString();
 				Console.WriteLine($"\nOriginal String\n{originalString}");
 
-				var encryptedString = GCrypt.Encrypt(originalString);
+				var encryptedString = GCrypter.Encrypt(originalString);
 				Console.WriteLine($"\nGCrypt.Encrypt(\"{originalString}\")\n{encryptedString}");
 
-				var decryptedString = GCrypt.Decrypt(encryptedString);
+				var decryptedString = GCrypter.Decrypt(encryptedString);
 				Console.WriteLine($"\nGCrypt.Decrypt(\"{encryptedString}\")\n{decryptedString}");
 
 				Console.WriteLine($"\nResults match ?\n{string.Equals(originalString, decryptedString)}");
