@@ -15,7 +15,7 @@
 		<RepositoryType>GIT</RepositoryType>
 		<PackageTags>crypt GCrypt encrypt decrypt encryption decryption</PackageTags>
 		<PackageIcon>GCrypt.png</PackageIcon>
-		<PackageVersion>1.1.0</PackageVersion>
+		<PackageVersion>1.1.1</PackageVersion>
 		<PackageIconFullPath>$(MSBuildThisFileDirectory)GCrypt.png</PackageIconFullPath>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>

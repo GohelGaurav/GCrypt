@@ -1,13 +1,13 @@
-# gcrypt
+# GCrypt
 A .NET Core/Framework library for all your encryption needs.
 
 # Installation
-To use gcrypt in your C# project, you can either download the gcrypt C# .NET libraries directly from the Github repository or, if you have the NuGet package manager installed, you can grab them automatically.
+To use GCrypt in your C# project, you can either download the GCrypt C# .NET library directly from the Github repository or, if you have the NuGet package manager installed, you can grab them automatically.
 
 ```
-PM> Install-Package gcrypt
+PM> Install-Package GCrypt
 ```
-Once you have the gcrypt libraries properly referenced in your project, you can include calls to them in your code.
+Once you have the GCrypt library properly referenced in your project, you can include calls to them in your code.
 
 Add the following namespaces to use the library:
 
@@ -32,11 +32,13 @@ public class Program
 			})
 			.BuildStatic();
 
+
+		//Where Needed
 		string originalString = Guid.NewGuid().ToString();
 
-		string encryptedString = GCrypt.Encrypt(originalString);
+		string encryptedString = GCrypter.Encrypt(originalString);
 
-		string decryptedString = GCrypt.Decrypt(encryptedString);
+		string decryptedString = GCrypter.Decrypt(encryptedString);
 	}
 }
 ```
