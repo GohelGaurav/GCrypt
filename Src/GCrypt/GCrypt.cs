@@ -1,33 +1,29 @@
-﻿using gcrypt.Providers;
+﻿using GCrypt.Providers;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace gcrypt
+namespace GCrypt
 {
-	public static class gcrypter
+	public static class GCrypt
 	{
-		private static ICryptProvider[] _cryptProviders;
+		internal static IGCryptProvider[] _cryptProviders { get; set; }
 
-		public static bool Initialize(params ICryptProvider[] cryptProviders)
+		static GCrypt()
 		{
-			if (cryptProviders.Length == 0)
-				cryptProviders = new ICryptProvider[] { new TripleDESProvider("gcrypt") };
-
-			_cryptProviders = cryptProviders;
-			return TestProviders(_cryptProviders);
+			_cryptProviders = new IGCryptProvider[0];
 		}
 
-		public static bool TestProviders(params ICryptProvider[] cryptProviders)
+		internal static bool TestProviders(params IGCryptProvider[] cryptProviders)
 		{
-			string failingProviders = "";
-			ICryptProvider[] testProviders = cryptProviders;
+			var failingProviders = "";
+			var testProviders = cryptProviders;
 			if (testProviders.Length == 0)
 				testProviders = _cryptProviders;
 
 			//Intividual Test
-			foreach (ICryptProvider item in testProviders)
+			foreach (var item in testProviders)
 			{
-				string originalString = Guid.NewGuid().ToString();
+				var originalString = Guid.NewGuid().ToString();
 				if (originalString != item.Decrypt(item.Encrypt(originalString)))
 				{
 					failingProviders += item.GetType().Name + ", ";
@@ -40,8 +36,8 @@ namespace gcrypt
 			}
 
 			//Sequential Test
-			string originalString2 = Guid.NewGuid().ToString();
-			string result = Decrypt(Encrypt(originalString2));
+			var originalString2 = Guid.NewGuid().ToString();
+			var result = Decrypt(Encrypt(originalString2));
 
 			if (originalString2 == result)
 			{
@@ -55,8 +51,8 @@ namespace gcrypt
 
 		public static string Encrypt(string originalString)
 		{
-			string value = originalString;
-			for (int i = 0; i < _cryptProviders.Length; i++)
+			var value = originalString;
+			for (var i = 0; i < _cryptProviders.Length; i++)
 			{
 				value = _cryptProviders[i].Encrypt(value);
 			}
@@ -65,8 +61,8 @@ namespace gcrypt
 
 		public static string Decrypt(string encryptedString)
 		{
-			string value = encryptedString;
-			for (int i = _cryptProviders.Length - 1; i >= 0; i--)
+			var value = encryptedString;
+			for (var i = _cryptProviders.Length - 1; i >= 0; i--)
 			{
 				value = _cryptProviders[i].Decrypt(value);
 			}

@@ -1,26 +1,33 @@
-﻿using gcrypt.Providers;
-using System;
+﻿using System;
 
-namespace gcrypt.TestConsole
+namespace GCrypt.TestConsole
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("gcrypter test ");
+			Console.WriteLine("GCrypt test ");
 			try
 			{
-				bool initResult = gcrypter.Initialize(new ReverseProvider(5), new TripleDESProvider("GG"), new Base64Provider());
+				var initResult = GCryptBuilder.Create()
+					.AddReverse(a => a.ChunkSize = 5)
+					.AddTripleDES(a => {
+						a.Key = "GG";
+						a.Mode = System.Security.Cryptography.CipherMode.ECB;
+						a.Padding = System.Security.Cryptography.PaddingMode.PKCS7;
+					}).AddBase64()
+					.BuildStatic();
+
 				Console.WriteLine($"\ngcrypter.Initialize()\n{initResult}");
 
-				string originalString = Guid.NewGuid().ToString();
+				var originalString = Guid.NewGuid().ToString();
 				Console.WriteLine($"\nOriginal String\n{originalString}");
 
-				string encryptedString = gcrypter.Encrypt(originalString);
-				Console.WriteLine($"\ngcrypter.Encrypt(\"{originalString}\")\n{encryptedString}");
+				var encryptedString = GCrypt.Encrypt(originalString);
+				Console.WriteLine($"\nGCrypt.Encrypt(\"{originalString}\")\n{encryptedString}");
 
-				string decryptedString = gcrypter.Decrypt(encryptedString);
-				Console.WriteLine($"\ngcrypter.Decrypt(\"{encryptedString}\")\n{decryptedString}");
+				var decryptedString = GCrypt.Decrypt(encryptedString);
+				Console.WriteLine($"\nGCrypt.Decrypt(\"{encryptedString}\")\n{decryptedString}");
 
 				Console.WriteLine($"\nResults match ?\n{string.Equals(originalString, decryptedString)}");
 			}

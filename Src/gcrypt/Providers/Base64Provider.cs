@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-namespace gcrypt.Providers
+namespace GCrypt.Providers
 {
-	public class Base64Provider : ICryptProvider
+	public sealed class Base64Provider : IGCryptProvider
 	{
 		public string Encrypt(string originalString)
 		{
