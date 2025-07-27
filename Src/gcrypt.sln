@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCrypt_Test", "GCrypt.TestConsole\GCrypt_Test.csproj", "{3665B1DE-5F40-4DCA-B0A7-DD78B1FA7A75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCrypt_Test", "GCrypt_Test\GCrypt_Test.csproj", "{3665B1DE-5F40-4DCA-B0A7-DD78B1FA7A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
