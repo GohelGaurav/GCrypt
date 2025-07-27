@@ -4,7 +4,9 @@
 		<TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net45;net40;net35;net20;netstandard2.0</TargetFrameworks>
 		<TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
 		<LangVersion>8.0</LangVersion>
-		<AssemblyVersion>11.0.0.0</AssemblyVersion>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.1.1</FileVersion>
+		<VersionPrefix>1.1.1</VersionPrefix>
 		<Authors>Gaurav Gohel</Authors>
 		<Product>GCrypt</Product>
 		<Description>GCrypt is a new Encryption provider for .NET</Description>
@@ -15,7 +17,6 @@
 		<RepositoryType>GIT</RepositoryType>
 		<PackageTags>crypt GCrypt encrypt decrypt encryption decryption</PackageTags>
 		<PackageIcon>GCrypt.png</PackageIcon>
-		<PackageVersion>1.1.1</PackageVersion>
 		<PackageIconFullPath>$(MSBuildThisFileDirectory)GCrypt.png</PackageIconFullPath>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>

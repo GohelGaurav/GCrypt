@@ -1,4 +1,8 @@
 # GCrypt
+
+[![NuGet version (GCrypt)](https://img.shields.io/nuget/v/GCrypt)](https://www.nuget.org/packages/gcrypt/)
+![NuGet Downloads](https://img.shields.io/nuget/dt/gcrypt)
+
 A .NET Core/Framework library for all your encryption needs.
 
 # Installation
